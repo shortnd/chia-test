@@ -78,7 +78,7 @@ describe('Books', () => {
         let book = new Book({ title: "The Lord of the Rings", author: "J.R.R. Tolkien", year: 1954, pages: 1170 });
         book.save((err, book) => {
             chai.request(server)
-          .get('/book/' + book.id)
+          .get('/books/' + book.id)
           .send(book)
           .end((err, res) => {
                 res.should.have.status(200);
